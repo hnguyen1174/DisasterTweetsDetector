@@ -40,6 +40,14 @@ Model Performances as of 04/04/2021:
 |XLM-RoBERTa-Base (e=1, b=64)|No Preprocessing|81.88%|79.00%|78.27%|78.38%|81.41%|
 |XLM-RoBERTa-Base (e=5, alternate b)|No Preprocessing|81.35%|78.03%|78.27%|78.15%|80.96%|
 
+## Public Scores
+
+|Score|Rank|Date|Model|
+|:--:|:--:|:--:|:--:|
+|0.83266|297th|2021-04-04|Bert-Base (Uncased)|
+|0.83389|274th|2021-04-04|Bertweet (Uncased), batch size = 8, no dropout|
+|0.83481|258th|2021-04-05|Bertweet (Uncased), batch size = 12, with dropout|
+
 ## Next Steps:
 
 * [ ] Ensemble or Voting Classifiers for BERT-related models
@@ -47,3 +55,5 @@ Model Performances as of 04/04/2021:
 * [X] Bertweet(https://huggingface.co/transformers/model_doc/bertweet.html)
 * [ ] Take a deeper look at data processing (maybe search for best combinations of data processing steps)
 * [ ] Gradient accumulation.
+* [ ] Error Analysis
+* [ ] Streamlit
