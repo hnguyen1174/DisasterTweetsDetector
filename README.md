@@ -39,3 +39,11 @@ Model Performances as of 04/04/2021:
 |XLM-RoBERTa-Base (e=2, b=32)|No Preprocessing|82.14%|82.11%|74.27%|77.99%|81.13%|
 |XLM-RoBERTa-Base (e=1, b=64)|No Preprocessing|81.88%|79.00%|78.27%|78.38%|81.41%|
 |XLM-RoBERTa-Base (e=5, alternate b)|No Preprocessing|81.35%|78.03%|78.27%|78.15%|80.96%|
+
+## Next Steps:
+
+1. Ensemble or Voting Classifiers for BERT-related models
+2. Use BERT Large with model parallelism on AWS EC2/SageMaker
+3. Bertweet(https://huggingface.co/transformers/model_doc/bertweet.html)
+4. Take a deeper look at data processing (maybe search for best combinations of data processing steps)
+5. Gradient accumulation.
