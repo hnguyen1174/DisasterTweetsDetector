@@ -42,8 +42,8 @@ Model Performances as of 04/04/2021:
 
 ## Next Steps:
 
-[ ] Ensemble or Voting Classifiers for BERT-related models
-[ ] Use BERT Large with model parallelism on AWS EC2/SageMaker
-[X] Bertweet(https://huggingface.co/transformers/model_doc/bertweet.html)
-[ ] Take a deeper look at data processing (maybe search for best combinations of data processing steps)
-[ ] Gradient accumulation.
+* [ ] Ensemble or Voting Classifiers for BERT-related models
+* [ ] Use BERT Large with model parallelism on AWS EC2/SageMaker
+* [X] Bertweet(https://huggingface.co/transformers/model_doc/bertweet.html)
+* [ ] Take a deeper look at data processing (maybe search for best combinations of data processing steps)
+* [ ] Gradient accumulation.
