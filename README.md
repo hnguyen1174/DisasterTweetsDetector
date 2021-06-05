@@ -26,6 +26,30 @@ The dataset includes 7,613 tweets, in which ~43% are actual disaster-related twe
 
 ## Directory Structure
 
+├── README.md                              <- You are here
+├── app/                                   <- Streamlit app
+│
+├── config/                                <- Directory for configuration files 
+│
+├── data/                                  <- Folder that contains data used or generated. 
+│
+├── reports/                               <- Project reports/presentations
+│
+├── references/                            <- Paper/references
+│
+├── eda/                                   <- Folder that contains exploratory data analysis outputs
+│
+├── models/                                <- Trained model objects, model predictions, feature importance and model evaluations
+│
+├── src/                                   <- Source code for the project 
+│
+├── test/                                  <- Files necessary for running unit tests and reproducibility tests
+│
+├── Makefile                               <- Run the entire pipeline
+├── notebooks/                             <- WIP ipython notebooks
+├── run.py                                 <- Simplifies the execution of one or more of the src scripts  
+├── requirements.txt                       <- Python package dependencies 
+
 ## Clone the Repository
 
 To run the pipeline and the app, you will need to clone the repo:
