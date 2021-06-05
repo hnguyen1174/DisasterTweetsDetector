@@ -70,7 +70,9 @@ Model Performances as of 04/04/2021:
 
 ## App
 
-## Develop Using Colab
+## For Developers:
+
+### Develop Using Colab
 
 To work on this project, I SSH into Google Colab using VS Code through [ssh-colab](https://pypi.org/project/colab-ssh/). 
 
@@ -94,6 +96,22 @@ To work on this project, I SSH into Google Colab using VS Code through [ssh-cola
 	# 	 User root
 	# 	 Port <something>
     ```
+
+### Installing Miniconda
+
+```
+cd <working_folder>
+$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+$ bash Miniconda3-latest-Linux-x86_64.sh
+$ conda create -n <env_name> python=3.7
+$ conda activate <env_name>
+
+# Install pytorch with CUDA
+$ conda install pytorch torchvision cudatoolkit -c pytorch
+
+# Install all requirements
+$ pip install -r requirements.txt
+```
 
 ## Project Artifact
 
