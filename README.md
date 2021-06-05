@@ -26,6 +26,8 @@ The dataset includes 7,613 tweets, in which ~43% are actual disaster-related twe
 
 ## Directory Structure
 
+
+```
 ├── README.md                              <- You are here
 ├── app/                                   <- Streamlit app
 │
@@ -49,6 +51,7 @@ The dataset includes 7,613 tweets, in which ~43% are actual disaster-related twe
 ├── notebooks/                             <- WIP ipython notebooks
 ├── run.py                                 <- Simplifies the execution of one or more of the src scripts  
 ├── requirements.txt                       <- Python package dependencies 
+```
 
 ## Clone the Repository
 
