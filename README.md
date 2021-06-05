@@ -28,6 +28,16 @@ The dataset includes 7,613 tweets, in which ~43% are actual disaster-related twe
 
 ## Clone the Repository
 
+To run the pipeline and the app, you will need to clone the repo:
+
+```
+# Clone the repo 
+git clone https://github.com/hnguyen1174/DisasterTweetsDetector.git
+
+# update working directory
+cd DisasterTweetsDetector
+```
+
 ## Methods:
 
 Currently, I am applying BERT and related models (such as DistillBERT, RoBERTa and XLM-BERT) for this task. Comparing with traditional ML baselines (logistic regression, SVM and Random Forest), transformer models achieve ~5% improvement in accuracy in average. 
@@ -97,7 +107,7 @@ To work on this project, I SSH into Google Colab using VS Code through [ssh-cola
 	# 	 Port <something>
     ```
 
-### Installing Miniconda
+### Installing Miniconda and Using Virtual Environment
 
 ```
 cd <working_folder>
