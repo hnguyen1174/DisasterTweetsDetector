@@ -6,6 +6,8 @@ This is a repository based on the [Natural Language Processing with Disaster Twe
 
 The goal of the competition is to detect whether a tweet signals true disasters, including manmade or natural ones. This can potentially help disaster relief organizations and news agencies. 
 
+Testing
+
 ## Data
 
 The dataset includes 7,613 tweets, in which ~43% are actual disaster-related tweets (so this is a fairly balanced dataset).
