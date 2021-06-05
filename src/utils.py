@@ -28,7 +28,7 @@ def compute_metrics(pred):
     return {"accuracy": acc, "f1": f1, "precision": precision, "recall": recall, "auc": auc}
 
 
-def tokenize(batch):
+def tokenize(batch, tokenizer):
     """
     Tokenize by batches for Transformers
     """
@@ -46,3 +46,16 @@ def softmax(x):
     """Compute softmax values for each sets of scores in x."""
     e_x = np.exp(x - np.max(x))
     return e_x / e_x.sum(axis=0)
+
+class TweetDataset(torch.utils.data.Dataset):
+    def __init__(self, encodings, labels):
+        self.encodings = encodings
+        self.labels = labels
+
+    def __getitem__(self, idx):
+        item = {key: torch.tensor(val[idx]) for key, val in self.encodings.items()}
+        item['labels'] = torch.tensor(self.labels[idx])
+        return item
+
+    def __len__(self):
+        return len(self.labels)
