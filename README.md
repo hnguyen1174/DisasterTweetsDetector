@@ -2,6 +2,18 @@
 
 ## Github Repo Structure
 
+* [Project Overview](https://github.com/hnguyen1174/DisasterTweetsDetector#project-overview)
+* [Data](https://github.com/hnguyen1174/DisasterTweetsDetector#project-overview)
+* [Directory Structure](https://github.com/hnguyen1174/DisasterTweetsDetector#directory-structure)
+* [Clone the repository](https://github.com/hnguyen1174/DisasterTweetsDetector#clone-the-repository)
+* [Method](https://github.com/hnguyen1174/DisasterTweetsDetector#clone-the-repository)
+* [Public Score](https://github.com/hnguyen1174/DisasterTweetsDetector#clone-the-repository)
+* [Testing](https://github.com/hnguyen1174/DisasterTweetsDetector#testing)
+* [App](https://github.com/hnguyen1174/DisasterTweetsDetector#app)
+* [Developer Guide](https://github.com/hnguyen1174/DisasterTweetsDetector#develop-using-colab)
+* [Project Artifact](https://github.com/hnguyen1174/DisasterTweetsDetector#project-artifact)
+* [Next Steps](https://github.com/hnguyen1174/DisasterTweetsDetector#project-artifact)
+
 ## Project Overview
 
 This is a repository based on the [Natural Language Processing with Disaster Tweets](https://www.kaggle.com/c/nlp-getting-started) competition on Kaggle. 
@@ -84,6 +96,9 @@ To work on this project, I SSH into Google Colab using VS Code through [ssh-cola
     ```
 
 ## Project Artifact
+
+* [Blog Post](https://garynguyen1174.netlify.app/post/2021-05-26-disaster-tweets-detector-under-construction/)
+* [Github Repo](https://github.com/hnguyen1174/DisasterTweetsDetector)
 
 ## Next Steps:
 
