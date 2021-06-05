@@ -150,6 +150,15 @@ $ conda install pytorch torchvision cudatoolkit -c pytorch
 $ pip install -r requirements.txt
 ```
 
+### Install Jupyter Lab
+
+```
+$ conda install -c conda-forge jupyterlab
+$ jupyter notebook --generate-config
+$ jupyter notebook password
+$ jupyter lab --no-browser --port=8889 --ip=0.0.0.0
+```
+
 ## Project Artifact
 
 * [Blog Post](https://garynguyen1174.netlify.app/post/2021-05-26-disaster-tweets-detector-under-construction/)
