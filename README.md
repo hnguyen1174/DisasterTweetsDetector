@@ -1,16 +1,20 @@
 # DisasterTweetsDetector
 
-## Introduction:
+## Github Repo Structure
+
+## Project Overview
 
 This is a repository based on the [Natural Language Processing with Disaster Tweets](https://www.kaggle.com/c/nlp-getting-started) competition on Kaggle. 
 
 The goal of the competition is to detect whether a tweet signals true disasters, including manmade or natural ones. This can potentially help disaster relief organizations and news agencies. 
 
-Testing
-
-## Data
+## The data
 
 The dataset includes 7,613 tweets, in which ~43% are actual disaster-related tweets (so this is a fairly balanced dataset).
+
+## Directory Structure
+
+## Clone the Repository
 
 ## Methods:
 
@@ -49,6 +53,37 @@ Model Performances as of 04/04/2021:
 |0.83266|297th|2021-04-04|Bert-Base (Uncased)|
 |0.83389|274th|2021-04-04|Bertweet (Uncased), batch size = 8, no dropout|
 |0.83481|258th|2021-04-05|Bertweet (Uncased), batch size = 12, with dropout|
+
+## Testing
+
+## App
+
+## Develop Using Colab
+
+To work on this project, I SSH into Google Colab using VS Code through [ssh-colab](https://pypi.org/project/colab-ssh/). 
+
+* Step 1: Register for a free account on [ngrok.com](ngrok.com).
+* Step 2: Go to ngrok and copy the [aut token](https://dashboard.ngrok.com/get-started/your-authtoken)
+* Step 3: In a destination Google Colab notebook, do the following:
+
+    ```
+    # Install colab_ssh
+    !pip install colab_ssh --upgrade
+
+
+    # Password is a password of your choice,
+    # you will be asked for it later.
+    from colab_ssh import launch_ssh
+    launch_ssh('YOUR_NGROK_AUTH_TOKEN', 'SOME_PASSWORD')
+
+    # Output for your vs code ssh
+    # Host google_colab_ssh
+	# 	 HostName 2.tcp.ngrok.io
+	# 	 User root
+	# 	 Port <something>
+    ```
+
+## Project Artifact
 
 ## Next Steps:
 
