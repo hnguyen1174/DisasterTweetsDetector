@@ -4,8 +4,11 @@ num_labels: 2
 
 training_batch_size: 16
 eval_batch_size: 64
-train_epoch: 2
+train_epoch: 3
 max_len: 250
 
 local_model_path: '../models/bert'
 hub_model_path: 'disaster_tweet_bert'
+
+save_local: true
+push_hf_hub: false

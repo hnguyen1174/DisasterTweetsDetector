@@ -62,10 +62,14 @@ To run the pipeline and the app, you will need to clone the repo:
 
 ```
 # Clone the repo 
-git clone https://github.com/hnguyen1174/DisasterTweetsDetector.git
+$ git clone https://github.com/hnguyen1174/DisasterTweetsDetector.git
 
 # update working directory
-cd DisasterTweetsDetector
+$ cd DisasterTweetsDetector
+
+# Configure git
+$ git config --global user.email "you@example.com"
+$ git config --global user.name "Your Name"
 ```
 
 ## Methods:
@@ -140,7 +144,7 @@ To work on this project, I SSH into Google Colab using VS Code through [ssh-cola
 ### Installing Miniconda and Using Virtual Environment
 
 ```
-cd <working_folder>
+$ cd <working_folder>
 $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 $ bash Miniconda3-latest-Linux-x86_64.sh
 $ conda create -n <env_name> python=3.7

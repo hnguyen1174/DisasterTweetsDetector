@@ -63,57 +63,32 @@ if __name__ == '__main__':
         random_state=2021
     )
 
-    # from transformers import AutoModelForSequenceClassification, AutoTokenizer
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model_name = config['model']
-    num_labels = config['num_labels']
 
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    
-    train_encodings = tokenizer(train_texts, truncation=True, padding=True)
-    val_encodings = tokenizer(val_texts, truncation=True, padding=True)
-
-    train_dataset = TweetDataset(train_encodings, train_labels)
-    val_dataset = TweetDataset(val_encodings, val_labels)
-
-    model = (AutoModelForSequenceClassification
-            .from_pretrained(model_name, num_labels=num_labels)
-            .to(device))
-
-    set_cuda_seed()
-
-    training_args = TrainingArguments(
-        output_dir='./results',         
-        num_train_epochs=config['train_epoch'],             
-        per_device_train_batch_size=config['training_batch_size'],  
-        per_device_eval_batch_size=config['eval_batch_size'],   
-        warmup_steps=500,
-        evaluation_strategy='epoch',
-        weight_decay=0.01,               
-        logging_dir='./logs',       
-        logging_steps=10,
+    trained_model = run_bert(
+        model_name = model_name,
+        train_epochs = config['train_epoch'],
+        train_batch_size = config['training_batch_size'],
+        eval_batch_size = config['eval_batch_size'],
+        num_labels = config['num_labels'],
+        train_texts = train_texts,
+        val_texts = val_texts,
+        train_labels = train_labels,
+        val_labels = val_labels
     )
 
-    trainer = Trainer(
-        model=model,                      
-        args=training_args,                 
-        train_dataset=train_dataset,
-        eval_dataset=val_dataset,
-        compute_metrics=compute_metrics
-    )
-
-    trainer.train()
-
-    # Save Local
     bert_config = AutoConfig.from_pretrained(model_name)
-
-    trainer.save_model(config['local_model_path'])
-    tokenizer_path = os.path.join(config['local_model_path'], 'tokenizer')
-    tokenizer.save_pretrained(tokenizer_path)
-    bert_config.save_pretrained(tokenizer_path)
+    
+    # Save Local
+    if config['save_local']:
+        trained_model.save_pretrained(config['local_model_path'])
+        tokenizer_path = os.path.join(config['local_model_path'], 'tokenizer')
+        tokenizer.save_pretrained(tokenizer_path)
+        bert_config.save_pretrained(tokenizer_path)
 
     # Save Huggingface Hub
-    hub_model_path = config['hub_model_path']
-    model.push_to_hub(hub_model_path)
-    tokenizer.push_to_hub(hub_model_path)
-    bert_config.push_to_hub(hub_model_path)
+    if config['push_hf_hub']:
+        hub_model_path = config['hub_model_path']
+        trained_model.push_to_hub(hub_model_path)
+        tokenizer.push_to_hub(hub_model_path)
+        bert_config.push_to_hub(hub_model_path)
