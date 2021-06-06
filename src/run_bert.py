@@ -72,10 +72,7 @@ if __name__ == '__main__':
     bert_config.save_pretrained(tokenizer_path)
 
     # Save Huggingface Hub
-    model.push_to_hub(config['hub_model_path'])
-    hub_tokenizer_path = os.path.join(config['hub_model_path'], 'tokenizer')
-    tokenizer.push_to_hub(hub_tokenizer_path)
-    bert_config.push_to_hub(hub_tokenizer_path)
-
-
-    
+    hub_model_path = config['hub_model_path']
+    model.push_to_hub(hub_model_path)
+    tokenizer.push_to_hub(hub_model_path)
+    bert_config.push_to_hub(hub_model_path)
