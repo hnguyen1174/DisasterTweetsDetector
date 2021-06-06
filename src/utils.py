@@ -2,6 +2,7 @@ from sklearn.metrics import precision_recall_fscore_support, accuracy_score, roc
 import random
 import numpy as np
 import torch
+import yaml
 
 def compute_metrics(pred):
     """
@@ -59,3 +60,10 @@ class TweetDataset(torch.utils.data.Dataset):
 
     def __len__(self):
         return len(self.encodings["input_ids"])
+
+
+def load_config(config_path):
+
+    with open(config_path) as f:
+        config = yaml.safe_load(f)
+    return config
