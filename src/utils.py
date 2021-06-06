@@ -139,3 +139,27 @@ class BertweetClassifier(nn.Module):
         logits = self.classifier(hidden_state_dropout)
 
         return logits
+
+def initialize_model(epochs=4):
+    """Initialize the Bert Classifier, the optimizer and the learning rate scheduler.
+    """
+    # Instantiate Bert Classifier
+    bertweet_classifier = BertweetClassifier(freeze_bert=False)
+
+    # Tell PyTorch to run the model on GPU
+    bertweet_classifier.to(device)
+
+    # Create the optimizer
+    optimizer = AdamW(bertweet_classifier.parameters(),
+                      lr=5e-5,    # Default learning rate
+                      eps=1e-8    # Default epsilon value
+                      )
+
+    # Total number of training steps
+    total_steps = len(train_dataloader) * epochs
+
+    # Set up the learning rate scheduler
+    scheduler = get_linear_schedule_with_warmup(optimizer,
+                                                num_warmup_steps=0, # Default value
+                                                num_training_steps=total_steps)
+    return bertweet_classifier, optimizer, scheduler
