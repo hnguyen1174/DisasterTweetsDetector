@@ -41,21 +41,21 @@ def set_cuda_seed(seed_val=42):
     torch.manual_seed(seed_val)
     torch.cuda.manual_seed_all(seed_val)
 
-
 def softmax(x):
     """Compute softmax values for each sets of scores in x."""
     e_x = np.exp(x - np.max(x))
     return e_x / e_x.sum(axis=0)
 
 class TweetDataset(torch.utils.data.Dataset):
-    def __init__(self, encodings, labels):
+    def __init__(self, encodings, labels=None):
         self.encodings = encodings
         self.labels = labels
 
     def __getitem__(self, idx):
         item = {key: torch.tensor(val[idx]) for key, val in self.encodings.items()}
-        item['labels'] = torch.tensor(self.labels[idx])
+        if self.labels:
+            item["labels"] = torch.tensor(self.labels[idx])
         return item
 
     def __len__(self):
-        return len(self.labels)
+        return len(self.encodings["input_ids"])

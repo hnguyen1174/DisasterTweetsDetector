@@ -10,7 +10,6 @@ from utils import *
 if __name__ == '__main__':
 
     train = pd.read_csv('../data/train.csv')
-    test = pd.read_csv('../data/test.csv')
     
     all_train_texts = train.text.to_list()
     all_train_labels = train.target.to_list()

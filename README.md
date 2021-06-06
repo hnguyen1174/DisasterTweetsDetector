@@ -162,6 +162,13 @@ $ jupyter notebook password
 $ jupyter lab --no-browser --port=8889 --ip=0.0.0.0
 ```
 
+### Preparation to upload models to Huggingface Model Hub
+
+```
+# Add your credentials on https://huggingface.co/
+$ transformers-cli login
+```
+
 ### Install git-lfs to interact with Huggingface Model Hub
 
 ```
