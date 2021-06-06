@@ -24,8 +24,11 @@ The goal of the competition is to detect whether a tweet signals true disasters,
 
 The dataset includes 7,613 tweets, in which ~43% are actual disaster-related tweets (so this is a fairly balanced dataset).
 
-## Directory Structure
+The density of the tweet lengths is as follows:
 
+<img src="eda/figures/sent_len_dist.png" alt="drawing" width="350"/>
+
+## Directory Structure
 
 ```
 ├── README.md                              <- You are here
