@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from datasets import load_dataset
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from transformers import AutoTokenizer, AutoModelForSequenceClassification, AutoConfig
 from transformers import Trainer, TrainingArguments
 import torch
 from utils import *
@@ -37,6 +37,7 @@ if __name__ == '__main__':
     model = (AutoModelForSequenceClassification
             .from_pretrained(model_name, num_labels=num_labels)
             .to(device))
+    config = AutoConfig.from_pretrained(model_name)
 
     set_cuda_seed()
 
@@ -61,3 +62,16 @@ if __name__ == '__main__':
     )
 
     trainer.train()
+
+    # Save Local
+    trainer.save_model('../models/bert')
+    tokenizer.save_pretrained('../models/bert/tokenizer')
+    config.save_pretrained('../models/bert/tokenizer')
+
+    # Save Huggingface Hub
+    trainer.save_model('https://huggingface.co/garynguyen1174/disaster_tweet_bert')
+    tokenizer.save_pretrained('https://huggingface.co/garynguyen1174/disaster_tweet_bert')
+    config.save_pretrained('https://huggingface.co/garynguyen1174/disaster_tweet_bert')
+
+
+    
