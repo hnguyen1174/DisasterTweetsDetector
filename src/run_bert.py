@@ -69,9 +69,9 @@ if __name__ == '__main__':
     config.save_pretrained('../models/bert/tokenizer')
 
     # Save Huggingface Hub
-    trainer.save_model('https://huggingface.co/garynguyen1174/disaster_tweet_bert')
-    tokenizer.save_pretrained('https://huggingface.co/garynguyen1174/disaster_tweet_bert')
-    config.save_pretrained('https://huggingface.co/garynguyen1174/disaster_tweet_bert')
+    model.push_to_hub('disaster_tweet_bert')
+    tokenizer.push_to_hub('disaster_tweet_bert')
+    config.push_to_hub('disaster_tweet_bert')
 
 
     

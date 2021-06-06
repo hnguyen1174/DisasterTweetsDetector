@@ -133,3 +133,4 @@ dmypy.json
 src/__pycache__/*
 src/results/*
 models/bert/*
+models/disaster_tweet_bert/*
