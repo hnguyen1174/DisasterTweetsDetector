@@ -47,7 +47,7 @@ def run_bert(model_name, train_epochs, train_batch_size, eval_batch_size,
     )
 
     trainer.train()
-    return model
+    return model, tokenizer
 
 if __name__ == '__main__':
 
@@ -65,7 +65,7 @@ if __name__ == '__main__':
 
     model_name = config['model']
 
-    trained_model = run_bert(
+    trained_model, tokenizer = run_bert(
         model_name = model_name,
         train_epochs = config['train_epoch'],
         train_batch_size = config['training_batch_size'],
@@ -78,7 +78,7 @@ if __name__ == '__main__':
     )
 
     bert_config = AutoConfig.from_pretrained(model_name)
-    
+
     # Save Local
     if config['save_local']:
         trained_model.save_pretrained(config['local_model_path'])
