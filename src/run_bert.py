@@ -64,12 +64,13 @@ if __name__ == '__main__':
     )
 
     model_name = config['model']
+    eval_batch_size = config['eval_batch_size']
 
     trained_model, tokenizer = run_bert(
         model_name = model_name,
         train_epochs = config['train_epoch'],
         train_batch_size = config['training_batch_size'],
-        eval_batch_size = config['eval_batch_size'],
+        eval_batch_size = eval_batch_size,
         num_labels = config['num_labels'],
         train_texts = train_texts,
         val_texts = val_texts,
