@@ -5,6 +5,7 @@ num_labels: 2
 training_batch_size: 16
 eval_batch_size: 64
 train_epoch: 2
+max_len: 250
 
 local_model_path: '../models/bert'
 hub_model_path: 'disaster_tweet_bert'
